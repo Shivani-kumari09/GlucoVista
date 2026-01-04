@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Diabetes Risk Assessment Results</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Assessment Results</h1>
+            <p class="subtitle">Diabetes Risk Assessment Report</p>
+        </header>
+
+        <div class="results-page-content">
+            <!-- Assessment Results Section -->
+            <div class="results-section">
+                <h2>Your Assessment Results</h2>
+                
+                <div class="risk-indicator" id="riskIndicator"></div>
+                
+                <div class="chart-container">
+                    <canvas id="riskChart"></canvas>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>BMI</h3>
+                        <p class="metric-value" id="bmiValue"></p>
+                        <p class="metric-status" id="bmiStatus"></p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Blood Glucose</h3>
+                        <p class="metric-value" id="glucoseValue"></p>
+                        <p class="metric-status" id="glucoseStatus"></p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>HbA1c</h3>
+                        <p class="metric-value" id="hba1cValue"></p>
+                        <p class="metric-status" id="hba1cStatus"></p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Blood Pressure</h3>
+                        <p class="metric-value" id="bpValue"></p>
+                        <p class="metric-status" id="bpStatus"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Trends Chart Section -->
+            <div class="trends-section" id="trendsSection" style="display: none;">
+                <h3>Monthly Diabetes Risk Indicators</h3>
+                <div class="chart-container" style="height: 400px;">
+                    <canvas id="trendsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Precautions Section -->
+            <div class="precautions-section">
+                <h3>Precautions & Recommendations</h3>
+                <ul id="precautionsList"></ul>
+            </div>
+
+            <!-- Nearest Hospitals Section -->
+            <div class="hospitals-section" id="hospitalsSection" style="display: none;">
+                <h3>🏥 Nearest Hospitals</h3>
+                <p class="hospitals-subtitle">Based on your location and risk status, here are the nearest hospitals:</p>
+                <div id="hospitalsList" class="hospitals-list"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="reset-btn" onclick="window.location.href='index.html'">New Assessment</button>
+                <button class="reset-btn" onclick="window.print()">Print Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="results.js"></script>
+</body>
+</html>
+
